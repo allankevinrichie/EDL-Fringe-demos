@@ -1,0 +1,11 @@
+- Gregory Smetana
+  Project Leader
+
+- Abdulbasit Abid
+  Wavelet transform profilometry (WTP) algorithm in C language.
+
+- Munther Gdeisat
+  Wavelet transform profilometry (WTP) algorithm in C language.
+
+- Joshua Stults
+  FFT-based Abel Inversion
