@@ -2,18 +2,19 @@ import numpy as np
 from matplotlib import pyplot as plt
 from fringeAnalysis.WTP.constants import *
 from fringeAnalysis import WTP
-from fringeAnalysis.mask import remove_glowplug
+from fringeAnalysis.mask import remove_sphere
 
 from skimage import io, exposure
 import sys,os,os.path
 
-orig = io.imread('phi=0.9_frame0_crop.jpg', as_grey=True)
+orig = io.imread('Centering_088_crop.tif', as_grey=True)
 img = exposure.equalize_adapthist(orig)
 img = exposure.rescale_intensity(img, out_range=(0,255))
 
-template = io.imread('autolite_mask180x300.jpg', as_grey=True)
+r_min = 90
+r_max = 110
 
-masked = remove_glowplug(img, img, template, debug = False, outputPlot=False)
+masked = remove_sphere(img, img, r_min, r_max, debug = False, outputPlot=False)
 
 plt.figure()
 plt.gray()
@@ -27,4 +28,4 @@ plt.imshow(masked)
 plt.title("Masked")
 
 plt.show()
-plt.savefig('glowplugResult.png')
+plt.savefig('sphereResult.png')
