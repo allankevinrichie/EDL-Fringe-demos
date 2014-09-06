@@ -27,5 +27,6 @@ plt.subplot(122)
 plt.imshow(masked)
 plt.title("Masked")
 
-plt.show()
 plt.savefig('sphereResult.png')
+plt.show()
+
