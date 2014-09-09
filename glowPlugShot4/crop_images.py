@@ -11,6 +11,9 @@ w = 550
 x_off = 100
 y_off = 25
 
+if not os.path.exists('cropped'):
+    os.makedirs('cropped')
+
 frameNums = map(str,frameNums)
 for i in frameNums:
     imageFilename = ('images/' + imageFileBase + i + '.jpg')

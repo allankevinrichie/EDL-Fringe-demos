@@ -50,6 +50,8 @@ templateX, templateY, templateWidth  = locate_glowplug(img, approxTemplate, debu
 template = get_autolite_template(templateWidth+templateSlop, img_h/2)
 
 ## perform analysis
+if not os.path.exists('results'):
+    os.makedirs('results')
 
 frameNums = map(str,frameNums)
 for i in frameNums:
